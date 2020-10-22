@@ -47,6 +47,7 @@ public class CacheConfiguration {
             createCache(cm, com.ensimag.acvl.domain.User.class.getName());
             createCache(cm, com.ensimag.acvl.domain.Authority.class.getName());
             createCache(cm, com.ensimag.acvl.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.ensimag.acvl.domain.PersonnelSante.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
