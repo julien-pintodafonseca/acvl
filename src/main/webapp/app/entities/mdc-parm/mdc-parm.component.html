@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span>Mdc Parms</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-mdc-parm" [routerLink]="['/mdc-parm/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Mdc Parm
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="mdcParms?.length === 0">
+        <span>No mdcParms found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="mdcParms && mdcParms.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Nom</span></th>
+                    <th scope="col" ><span>Prenom</span></th>
+                    <th scope="col" ><span>Adresse</span></th>
+                    <th scope="col" ><span>Telephone</span></th>
+                    <th scope="col" ><span>Centre</span></th>
+                    <th scope="col" ><span>Etat</span></th>
+                    <th scope="col" ><span>Est Mobile</span></th>
+                    <th scope="col" ><span>Est Fixe</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mdcParm of mdcParms ;trackBy: trackId">
+                    <td><a [routerLink]="['/mdc-parm', mdcParm.id, 'view']">{{ mdcParm.id }}</a></td>
+                    <td>{{ mdcParm.nom }}</td>
+                    <td>{{ mdcParm.prenom }}</td>
+                    <td>{{ mdcParm.adresse }}</td>
+                    <td>{{ mdcParm.telephone }}</td>
+                    <td>{{ mdcParm.centre }}</td>
+                    <td>{{ mdcParm.etat }}</td>
+                    <td>{{ mdcParm.estMobile }}</td>
+                    <td>{{ mdcParm.estFixe }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/mdc-parm', mdcParm.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/mdc-parm', mdcParm.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(mdcParm)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

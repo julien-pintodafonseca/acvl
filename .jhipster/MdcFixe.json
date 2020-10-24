@@ -1,0 +1,57 @@
+{
+  "name": "MdcFixe",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "centre",
+      "fieldType": "TypeCentre",
+      "fieldValues": "SECOURS,SOIN,REGULATION"
+    },
+    {
+      "fieldName": "etat",
+      "fieldType": "Etat",
+      "fieldValues": "DISPO_BASE_OP,DISPO_HORS_BASE_OP,ATTENTE_INTERVENTION,INDISPO_EN_INTERVENTION,INDISPO_AUTRES"
+    },
+    {
+      "fieldName": "estMobile",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "estFixe",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201024153735",
+  "entityTableName": "mdc_fixe",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
