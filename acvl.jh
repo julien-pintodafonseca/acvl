@@ -1,0 +1,87 @@
+//
+// Simple example of entity model
+//
+
+enum TypeCentre {
+	SECOURS,
+    SOIN,
+    REGULATION
+}
+
+enum Etat {
+	DISPO_BASE_OP,
+    DISPO_HORS_BASE_OP,
+    ATTENTE_INTERVENTION,
+    INDISPO_EN_INTERVENTION,
+    INDISPO_AUTRES
+}
+
+entity MedecinMobile {
+    nom String required,
+    prenom String required,
+    adresse String,
+    telephone String, 
+    centre TypeCentre,
+    etat Etat,
+    estMobile Boolean,
+    estFixe Boolean
+}
+
+entity MedecinParm {
+    nom String required,
+    prenom String required,
+    adresse String,
+    telephone String, 
+    centre TypeCentre,
+    etat Etat,
+    estMobile Boolean,
+    estFixe Boolean
+}
+
+entity MedecinFixe {
+    nom String required,
+    prenom String required,
+    adresse String,
+    telephone String, 
+    centre TypeCentre,
+    etat Etat,
+    estMobile Boolean,
+    estFixe Boolean
+}
+
+entity MedecinRegulateur {
+    nom String required,
+    prenom String required,
+    adresse String,
+    telephone String, 
+    centre TypeCentre,
+    etat Etat,
+    estMobile Boolean,
+    estFixe Boolean
+}
+
+entity Infirmier {
+    nom String required,
+    prenom String required,
+    adresse String,
+    telephone String, 
+    centre TypeCentre,
+    etat Etat,
+    estMobile Boolean,
+    estFixe Boolean
+}
+
+entity Secouriste {
+    nom String required,
+    prenom String required,
+    adresse String,
+    telephone String, 
+    centre TypeCentre,
+    etat Etat,
+    estMobile Boolean,
+    estFixe Boolean,
+    estAmbulancier Boolean
+}
+
+service * with serviceClass
+dto * with mapstruct
