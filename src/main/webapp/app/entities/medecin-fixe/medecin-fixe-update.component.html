@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-medecin-fixe-heading">Create or edit a Medecin Fixe</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                    <div *ngIf="editForm.get('nom')!.invalid && (editForm.get('nom')!.dirty || editForm.get('nom')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nom')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" id="field_prenom"
+                           formControlName="prenom"/>
+                    <div *ngIf="editForm.get('prenom')!.invalid && (editForm.get('prenom')!.dirty || editForm.get('prenom')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('prenom')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                           formControlName="adresse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_centre">Centre</label>
+                    <select class="form-control" name="centre" formControlName="centre" id="field_centre">
+                        <option value="SECOURS">SECOURS</option>
+                        <option value="SOIN">SOIN</option>
+                        <option value="REGULATION">REGULATION</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_etat">Etat</label>
+                    <select class="form-control" name="etat" formControlName="etat" id="field_etat">
+                        <option value="DISPO_BASE_OP">DISPO_BASE_OP</option>
+                        <option value="DISPO_HORS_BASE_OP">DISPO_HORS_BASE_OP</option>
+                        <option value="ATTENTE_INTERVENTION">ATTENTE_INTERVENTION</option>
+                        <option value="INDISPO_EN_INTERVENTION">INDISPO_EN_INTERVENTION</option>
+                        <option value="INDISPO_AUTRES">INDISPO_AUTRES</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_estMobile">Est Mobile</label>
+                    <input type="checkbox" class="form-control" name="estMobile" id="field_estMobile"
+                           formControlName="estMobile"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_estFixe">Est Fixe</label>
+                    <input type="checkbox" class="form-control" name="estFixe" id="field_estFixe"
+                           formControlName="estFixe"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

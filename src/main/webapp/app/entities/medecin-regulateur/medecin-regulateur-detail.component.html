@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="medecinRegulateur">
+            <h2><span>Medecin Regulateur</span> {{ medecinRegulateur.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{ medecinRegulateur.nom }}</span>
+                </dd>
+                <dt><span>Prenom</span></dt>
+                <dd>
+                    <span>{{ medecinRegulateur.prenom }}</span>
+                </dd>
+                <dt><span>Adresse</span></dt>
+                <dd>
+                    <span>{{ medecinRegulateur.adresse }}</span>
+                </dd>
+                <dt><span>Telephone</span></dt>
+                <dd>
+                    <span>{{ medecinRegulateur.telephone }}</span>
+                </dd>
+                <dt><span>Centre</span></dt>
+                <dd>
+                    <span>{{ medecinRegulateur.centre }}</span>
+                </dd>
+                <dt><span>Etat</span></dt>
+                <dd>
+                    <span>{{ medecinRegulateur.etat }}</span>
+                </dd>
+                <dt><span>Est Mobile</span></dt>
+                <dd>
+                    <span>{{ medecinRegulateur.estMobile }}</span>
+                </dd>
+                <dt><span>Est Fixe</span></dt>
+                <dd>
+                    <span>{{ medecinRegulateur.estFixe }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/medecin-regulateur', medecinRegulateur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
