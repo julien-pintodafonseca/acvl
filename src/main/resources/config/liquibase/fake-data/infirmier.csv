@@ -1,0 +1,11 @@
+id;nom;prenom;adresse;telephone;centre;etat;est_mobile;est_fixe
+1;SMS;programming;primary Illinois;952.860.4288 x554;REGULATION;ATTENTE_INTERVENTION;true;true
+2;web-enabled;integrate;Avon Mozambique Soap;1-492-355-2436;REGULATION;DISPO_BASE_OP;true;true
+3;extend;Optimization Tennessee;Borders Books;1-202-191-7273;SOIN;DISPO_HORS_BASE_OP;false;true
+4;Kenya;deliverables;Agent Mews Generic;1-342-922-2101 x52285;SECOURS;DISPO_HORS_BASE_OP;false;true
+5;Developer ivory;Licensed Fresh Gloves;Communications;509-324-7794;SECOURS;DISPO_BASE_OP;true;false
+6;Avon HTTP Facilitator;Soft Orchestrator;Leone Personal Loan Account;1-677-994-2750 x13960;SOIN;INDISPO_AUTRES;true;true
+7;Checking Account;Chips;project Avon;821.647.0508;REGULATION;DISPO_HORS_BASE_OP;true;false
+8;Wooden Cheese;envisioneer;Assurance;239.434.0966 x14853;SOIN;INDISPO_EN_INTERVENTION;false;true
+9;Brooks;Configuration niches index;driver mobile innovative;1-500-899-1277;SECOURS;INDISPO_EN_INTERVENTION;false;false
+10;driver Applications withdrawal;Fresh;Dobra Steel neural;(660) 978-8207 x10657;REGULATION;INDISPO_EN_INTERVENTION;false;true

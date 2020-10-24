@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span>Secouristes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-secouriste" [routerLink]="['/secouriste/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Secouriste
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="secouristes?.length === 0">
+        <span>No secouristes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="secouristes && secouristes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Nom</span></th>
+                    <th scope="col" ><span>Prenom</span></th>
+                    <th scope="col" ><span>Adresse</span></th>
+                    <th scope="col" ><span>Telephone</span></th>
+                    <th scope="col" ><span>Centre</span></th>
+                    <th scope="col" ><span>Etat</span></th>
+                    <th scope="col" ><span>Est Mobile</span></th>
+                    <th scope="col" ><span>Est Fixe</span></th>
+                    <th scope="col" ><span>Est Ambulancier</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let secouriste of secouristes ;trackBy: trackId">
+                    <td><a [routerLink]="['/secouriste', secouriste.id, 'view']">{{ secouriste.id }}</a></td>
+                    <td>{{ secouriste.nom }}</td>
+                    <td>{{ secouriste.prenom }}</td>
+                    <td>{{ secouriste.adresse }}</td>
+                    <td>{{ secouriste.telephone }}</td>
+                    <td>{{ secouriste.centre }}</td>
+                    <td>{{ secouriste.etat }}</td>
+                    <td>{{ secouriste.estMobile }}</td>
+                    <td>{{ secouriste.estFixe }}</td>
+                    <td>{{ secouriste.estAmbulancier }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/secouriste', secouriste.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/secouriste', secouriste.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(secouriste)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

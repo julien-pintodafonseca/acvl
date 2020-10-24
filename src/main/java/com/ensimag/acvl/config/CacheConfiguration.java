@@ -47,6 +47,12 @@ public class CacheConfiguration {
             createCache(cm, com.ensimag.acvl.domain.User.class.getName());
             createCache(cm, com.ensimag.acvl.domain.Authority.class.getName());
             createCache(cm, com.ensimag.acvl.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.ensimag.acvl.domain.MedecinMobile.class.getName());
+            createCache(cm, com.ensimag.acvl.domain.MedecinParm.class.getName());
+            createCache(cm, com.ensimag.acvl.domain.MedecinFixe.class.getName());
+            createCache(cm, com.ensimag.acvl.domain.MedecinRegulateur.class.getName());
+            createCache(cm, com.ensimag.acvl.domain.Infirmier.class.getName());
+            createCache(cm, com.ensimag.acvl.domain.Secouriste.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
