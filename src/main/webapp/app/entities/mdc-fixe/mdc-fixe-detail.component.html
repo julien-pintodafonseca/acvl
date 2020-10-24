@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mdcFixe">
+            <h2><span>Mdc Fixe</span> {{ mdcFixe.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{ mdcFixe.nom }}</span>
+                </dd>
+                <dt><span>Prenom</span></dt>
+                <dd>
+                    <span>{{ mdcFixe.prenom }}</span>
+                </dd>
+                <dt><span>Adresse</span></dt>
+                <dd>
+                    <span>{{ mdcFixe.adresse }}</span>
+                </dd>
+                <dt><span>Telephone</span></dt>
+                <dd>
+                    <span>{{ mdcFixe.telephone }}</span>
+                </dd>
+                <dt><span>Centre</span></dt>
+                <dd>
+                    <span>{{ mdcFixe.centre }}</span>
+                </dd>
+                <dt><span>Etat</span></dt>
+                <dd>
+                    <span>{{ mdcFixe.etat }}</span>
+                </dd>
+                <dt><span>Est Mobile</span></dt>
+                <dd>
+                    <span>{{ mdcFixe.estMobile }}</span>
+                </dd>
+                <dt><span>Est Fixe</span></dt>
+                <dd>
+                    <span>{{ mdcFixe.estFixe }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/mdc-fixe', mdcFixe.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
